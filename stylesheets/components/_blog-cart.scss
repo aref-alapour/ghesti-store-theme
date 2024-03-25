@@ -1,0 +1,78 @@
+.blog-cart {
+    max-width: 250px;
+    margin: 0 auto;
+    & .card {
+        border-radius: 20px;
+        & img {
+            border-radius: 20px 20px 0 0;
+            width: 250px;
+            height: 200px;
+            object-fit: cover;
+        }
+        & .card-body {
+            position: relative;
+
+            & h5 {
+                color: $color-tertiary-3;
+                font-size: smaller;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 0 10px;
+                text-overflow: ellipsis;
+            }
+
+            & p {
+                font-size: smaller;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+                overflow: hidden;
+                color: $color-text-1;
+            }
+            & .btn-blog-card {
+                position: relative;
+                width: 100%;
+                & a {
+                    background-color: $color-tertiary-1;
+                    position: absolute;
+                    @include flex(center, center);
+                    gap: 5px;
+                    padding: 10px 40px;
+                    color: $color-white;
+                    bottom: -40px;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    width: fit-content;
+                    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+                }
+                &::before {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    top: 14.5px;
+                    right: 19.85px;
+                    border-top: 15px solid transparent;
+                    border-bottom: 16px solid transparent;
+                    border-left: 20px solid $color-tertiary-3;
+                    transform: rotate(90deg);
+                    z-index: -1;
+                }
+                &::after {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    top: 14.5px;
+                    left: 19.85px;
+                    border-top: 16px solid transparent;
+                    border-bottom: 15px solid transparent;
+                    border-left: 20px solid $color-tertiary-3;
+                    transform: rotate(90deg);
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}

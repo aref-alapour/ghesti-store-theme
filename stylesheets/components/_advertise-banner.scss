@@ -1,0 +1,15 @@
+.advrtiseBanner {
+    & img {
+        width: 100vw;
+    }
+    & .desktop-banner {
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+    & .mobile-banner {
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+.before-footer {
+    background-color: $color-tertiary-3;
+    color: $color-white;
+    padding: 10px 0;
+    & .details {
+        @include flex(space-between, center, row, wrap);
+        gap: 10px;
+        & .item {
+            width: 60px;
+            height: 60px;
+            @media screen and (min-width: 576px) {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    }
+}
+footer {
+    font-size: smaller;
+    background-color: $color-text-1;
+    & .social-footer {
+        & a > svg {
+            font-size: 1.5rem;
+            top: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $color-white;
+        }
+    }
+    & .newsletter-footer {
+        width: fit-content;
+        max-width: 500px;
+        margin: 0 auto;
+        & form {
+            background: $color-white;
+            @include flex(space-between);
+            gap: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            & svg {
+                margin-right: 5px;
+                color: $color-gray-1;
+            }
+            & input[type="text"] {
+                background: unset;
+                border: unset;
+                padding: 10px 0;
+                width: 60%;
+                &:focus {
+                    outline: unset;
+                }
+                &::placeholder {
+                    color: $color-gray-1;
+                }
+            }
+            & input[type="submit"] {
+                background: unset;
+                border: unset;
+                padding: 10px 20px;
+                background: $color-tertiary-1;
+                color: $color-white;
+                &:focus {
+                    outline: unset;
+                }
+            }
+        }
+        & sub {
+            color: $color-white;
+        }
+    }
+
+    & p {
+        margin-bottom: 0;
+    }
+    .copy-right {
+        font-size: smaller;
+    }
+    & .footer-about {
+        & h6 {
+            color: $color-white;
+        }
+        & p {
+            color: $color-text-3;
+        }
+    }
+    & .footer-menu-link {
+        & h6 {
+            color: $color-white;
+        }
+        color: $color-gray-1;
+        & ul {
+            & > li a {
+                position: relative;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 1px;
+                    right: 0;
+                    bottom: 0;
+                    background-color: $color-gray-1;
+                    transition: $hover-transition;
+                }
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

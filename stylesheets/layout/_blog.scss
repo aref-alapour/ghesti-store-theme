@@ -1,0 +1,183 @@
+.blog-archive {
+    & .blog-archive-sidebar {
+        background-color: $color-gray-2;
+        padding: 20px 15px;
+        border-radius: 20px;
+        @extend %box-shadow-theme;
+        position: sticky;
+        top: 80px;
+
+        & .sidebar-widget {
+            & h5 {
+                margin-bottom: 20px;
+                color: $color-tertiary-3;
+            }
+            & > ul {
+                @include flex(flex-start, start, column);
+                gap: 10px;
+                font-size: smaller;
+                padding-right: 10px;
+
+                & ul.children {
+                    margin-right: 10px;
+
+                    & li {
+                        position: relative;
+                        &::before {
+                            content: "←";
+                            right: 0;
+                            margin-left: 5px;
+                            font-size: 12px;
+                            color: $color-tertiary-3;
+                        }
+                    }
+                }
+            }
+            & .tagcloud {
+                & a {
+                    font-size: medium !important;
+                }
+            }
+        }
+        & .last-blog-sidebar {
+            & .item {
+                border: 1px solid $color-gray-1;
+                border-radius: 10px;
+                width: 100%;
+                height: 50px;
+                position: relative;
+                margin: 20px 0;
+                & img {
+                    position: absolute;
+                    width: 60px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    right: -10px;
+                    top: -5px;
+                    z-index: 0;
+                }
+                & .item-body {
+                    position: relative;
+                    & h5 {
+                        font-size: smaller;
+                        text-align: center;
+                        margin-top: 5px;
+                        margin-right: 50px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        z-index: 10;
+                        color: $color-tertiary-3;
+                    }
+                    & span {
+                        font-size: smaller;
+                        display: block;
+                        text-align: left;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+    & .blog-archive-items {
+        @include flex(center, center, row, wrap);
+        gap: 20px;
+        & .blog-archive-item {
+            max-width: 16rem;
+
+            & .card-body {
+                & .info {
+                    overflow: hidden;
+                    margin-bottom: 30px;
+                    & h5 {
+                        font-size: smaller;
+                        text-align: center;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        padding: 0 10px;
+                        text-overflow: ellipsis;
+                        color: $color-tertiary-3;
+                    }
+                    & p {
+                        font-size: smaller;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        -webkit-line-clamp: 4;
+                        overflow: hidden;
+                    }
+                }
+
+                & .btn-card {
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        width: 0;
+                        height: 0;
+                        position: absolute;
+                        top: -33px;
+                        left: -35px;
+                        border-top: 12px solid transparent;
+                        border-bottom: 12px solid transparent;
+                        border-left: 12px solid $color-tertiary-2;
+                        transform: rotate(180deg);
+                        z-index: -1;
+                    }
+
+                    & .blog-archive-btn {
+                        position: absolute;
+                        left: -35px;
+                        bottom: -15px;
+                        clip-path: polygon(0 0, 70% 0, 100% 100%, 0% 100%);
+                        border-radius: 0;
+                        padding-right: 40px;
+                    }
+                }
+            }
+
+            & .category-label {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: 0;
+                    height: 0;
+                    position: absolute;
+                    top: 28px;
+                    right: -10px;
+                    border-top: 12px solid transparent;
+                    border-bottom: 12px solid transparent;
+                    border-left: 12px solid $color-tertiary-2;
+                    z-index: -1;
+                }
+                & > a {
+                    position: absolute;
+                    z-index: 1;
+                    background-color: $color-tertiary-2;
+                    padding: 15px 10px 15px 25px;
+                    color: $color-black;
+                    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+                    top: 10px;
+                    right: -10px;
+                    font-size: smaller;
+                }
+            }
+            & .item-label {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+
+                & .item-title {
+                    @include flex(center, center);
+                    color: white;
+                    width: 55px;
+                    height: 35px;
+                    border-radius: 15px;
+                    font-size: smaller;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

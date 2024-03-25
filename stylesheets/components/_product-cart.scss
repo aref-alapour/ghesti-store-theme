@@ -1,0 +1,159 @@
+.product-cart {
+    max-width: 250px;
+    margin: 0 auto;
+    & .card {
+        position: relative;
+        & .off-label {
+            & .title {
+                background-color: red;
+                width: fit-content;
+                padding: 20px 5px 30px;
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 80%, 0 100%);
+                position: absolute;
+                top: -5px;
+                left: 10px;
+                & span {
+                    color: white;
+                    transform: rotate(-60deg);
+                    display: block;
+                    font-size: 12px;
+                }
+            }
+            &::before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: -7.2px;
+                left: 63.8px;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid rgb(138, 0, 0);
+                transform: rotate(-90deg);
+                z-index: -1;
+            }
+        }
+        & img {
+            width: 250px;
+            height: 300px;
+            object-fit: contain;
+        }
+
+        & .card-body {
+            position: relative;
+
+            & h5 {
+                color: $color-text-1;
+                font-size: smaller;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 0 10px;
+                text-overflow: ellipsis;
+            }
+        }
+        & .card-rate {
+            position: absolute;
+            bottom: 15px;
+            left: 10px;
+            font-size: 10px;
+        }
+        & .card-price {
+            font-size: small;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            & ins {
+                text-decoration: none;
+                font-weight: bold;
+            }
+            & del {
+                font-size: smaller;
+                text-decoration-color: red;
+            }
+        }
+
+        & .card-btn {
+            & a {
+                padding: 15px 20px 15px 35px;
+                display: block;
+                width: fit-content;
+                background-color: $color-tertiary-1;
+                color: $color-white;
+                clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+                position: absolute;
+                font-size: small;
+                right: -10px;
+                bottom: 10px;
+            }
+            &::before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: 65px;
+                right: -10px;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+                border-left: 10px solid $color-tertiary-3;
+                z-index: -1;
+            }
+        }
+    }
+}
+.product-cart-horizontal {
+    width: 300px;
+    min-height: 190px;
+    max-height: 190px;
+    & .card {
+        @include flex(space-between, center, row);
+        gap: 10px;
+        width: 300px;
+        min-height: 190px;
+        max-height: 190px;
+        & .image {
+            width: 40%;
+        }
+        & .card-body {
+            width: 60%;
+            & h5 {
+                color: $color-text-1;
+                font-size: smaller;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            & .card-price {
+                @include flex(center, center, column);
+                gap: 5px;
+                font-size: small;
+                text-align: center;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                & ins {
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+                & del {
+                    font-size: smaller;
+                    text-decoration-color: red;
+                }
+            }
+
+            & .card-btn {
+                & a {
+                    padding: 15px 10px;
+                    display: block;
+                    width: fit-content;
+                    margin: 0 auto;
+                    border-radius: 20px;
+                    background-color: $color-tertiary-3;
+                    color: $color-white;
+                    font-size: small;
+                }
+            }
+        }
+    }
+}

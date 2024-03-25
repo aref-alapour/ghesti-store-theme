@@ -1,0 +1,40 @@
+.btn-theme-p {
+    background-color: $color-tertiary-3;
+    border: 1px solid $color-tertiary-3;
+    color: $color-white;
+}
+.btn-theme-p:hover {
+    background-color: $color-tertiary-1;
+    border: 1px solid $color-tertiary-1;
+    color: $color-white;
+}
+.btn-theme-p-out {
+    background-color: unset;
+    border: 1px solid $color-tertiary-3;
+    color: $color-tertiary-3;
+}
+.btn-theme-p-out:hover {
+    background-color: $color-tertiary-3;
+    border: 1px solid $color-tertiary-3;
+    color: $color-white;
+}
+.btn-theme-s {
+    background-color: $color-primary-3;
+    border: 1px solid $color-primary-3;
+    color: $color-white;
+}
+.btn-theme-s:hover {
+    background-color: $color-primary-1;
+    border: 1px solid $color-primary-1;
+    color: $color-black;
+}
+.btn-theme-s-out {
+    background-color: unset;
+    border: 1px solid $color-primary-3;
+    color: $color-primary-3;
+}
+.btn-theme-s-out:hover {
+    background-color: $color-primary-3;
+    border: 1px solid $color-primary-3;
+    color: $color-white;
+}

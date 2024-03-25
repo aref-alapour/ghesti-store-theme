@@ -1,0 +1,53 @@
+.newsletter-footer {
+    & form {
+        @include flex(center, center, row, wrap);
+        row-gap: 10px;
+        column-gap: 20px;
+        & .gform-body {
+            max-width: 300px;
+            width: 80%;
+            & label {
+                display: none !important;
+            }
+            & input {
+                width: 100% !important;
+                height: 40px;
+                border: unset;
+                border-radius: 10px;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        & .gform_footer {
+            margin: unset !important;
+            padding: unset !important;
+
+            & input[type="submit"] {
+                height: 40px;
+                margin: unset;
+                padding: 0 10px;
+                border: unset;
+                border-radius: 10px;
+                background-color: $color-tertiary-3;
+                color: $color-white;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    & .gform_confirmation_message {
+        position: absolute;
+        z-index: 999;
+        bottom: 10px;
+        padding: 20px;
+        border-radius: 20px;
+        color: $color-black;
+        background-color: rgb(0, 230, 0);
+        animation: newsletter-message 5s ease-in-out 0s forwards;
+    }
+}

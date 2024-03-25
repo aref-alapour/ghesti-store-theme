@@ -1,0 +1,37 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $color-text-1;
+    font-weight: bold;
+}
+p {
+    color: $color-text-2;
+    text-align: justify;
+}
+p a {
+    color: $color-tertiary-3;
+    line-height: 0;
+    transition: all 0.2s ease;
+    font-weight: bolder;
+    &:hover {
+        color: $color-tertiary-1;
+    }
+}
+.smaller {
+    font-weight: lighter;
+}
+
+.bloder {
+    font-weight: bolder;
+}
+p::selection {
+    color: $color-white;
+    background-color: $color-tertiary-3;
+}
+.sticky {
+    position: sticky;
+    top: 0;
+}
